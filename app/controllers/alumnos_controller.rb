@@ -5,6 +5,8 @@ class AlumnosController < ApplicationController
   # GET /alumnos.json
   def index
     @alumnos = Alumno.all
+    @count = Alumno.count()
+    @random = Alumno.order("RANDOM()").first(1)
   end
 
   # GET /alumnos/1
@@ -71,4 +73,5 @@ class AlumnosController < ApplicationController
     def alumno_params
       params.require(:alumno).permit(:nombre, :apto)
     end
+
 end
