@@ -6,7 +6,7 @@ class AlumnosController < ApplicationController
   def index
     @alumnos = Alumno.all
     @count = Alumno.count()
-    @random = Alumno.order("RANDOM()").first(1)
+    @random = Alumno.order("RANDOM()").first(1)  
   end
 
   # GET /alumnos/1
